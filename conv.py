@@ -1,4 +1,5 @@
 import math
+import re
 #Done:
 #Base Function Lenght, Weight, Time, Temp, Speed, Capacity, Area, Sound, Power, Radiation
 
@@ -8,10 +9,10 @@ import math
 #Make Presentation
 
 def main():
-	a = raw_input('  Input Value  ')
+	a = Question(re.compile(r"^[0-9\ ]+$"), " Input Value ")
 	a_list = a.split(' ')
 	print a_list
-	if a == ''
+
 	b = raw_input('  Choose  category: Lenght , Temperature , Time , Speed , Weight , Capacity , Area , Sound , Power , Radiation	')
 	if b == 'Lenght':
 		Lenght(a_list)
@@ -33,6 +34,15 @@ def main():
 		Power(a_list)
 	elif b == 'Radiation':
 		Radiation(a_list)
+		
+def Question(regex, question_str):
+	FLAG = False
+	a = ""
+	while not FLAG:
+		a = raw_input(question_str).strip()
+		if regex.match(a):
+			FLAG = True
+	return a
  
 
 def Lenght(a_list):
@@ -613,5 +623,8 @@ def Radiation(a_list):
 			print 'Watt/Kilogram	', watt
 			print 'Rem/sec	', val	
 		i = i +1
+		
+	
+		
 main()
 
