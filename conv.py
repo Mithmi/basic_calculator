@@ -1,6 +1,6 @@
 import math
 import re
-import os
+import os, sys
 #Done:
 #Base Function Lenght, Weight, Time, Temp, Speed, Capacity, Area, Sound, Power, Radiation
 #Debug
@@ -54,7 +54,8 @@ def Category(Value_list):
 	elif point == '9':
 		Radiation(Value_list)
 	elif point =='10':
-		Done = True
+		sys.exit()
+		
 	
 def Checkvalue(regex, checkvalue_str):
 	FLAG = False
@@ -91,7 +92,7 @@ def Lenght(Value_list):
 	while not Done:
 		while i < len(Value_list):
 			val = float(Value_list[i])
-			newpoint = Checknewpoint(re.compile(r"^[0-9\ ]+$"),'  Choose const: \n mm - 0 \n inch - 1 \n cm - 2 \n meters - 3 \n kilometers - 4	 \n Exit - 5')
+			newpoint = Checknewpoint(re.compile(r"^[0-9\ ]+$"),'  Choose const: \n mm - 0 \n inch - 1 \n cm - 2 \n meters - 3 \n kilometers - 4	 \n Exit - 5	')
 			os.system('clear')
 			if newpoint == '0': ## defun Millimeters
 					inch = val/25.4 # Millimeters to Inch 
@@ -324,8 +325,11 @@ def Weight(Value_list):
 				newpoint = Checknewpoint(re.compile(r"^[0-9\ ]+$"),'  Choose const: \n gram - 1 \n kilogram - 2 \n pound - 3 \n tonne - 4 \n Exit - 5	')
 				os.system('clear')
 			if newpoint == '5':## Exit
-					Done = True
+				Done = True
+				break
 			i =i +1
+			Weight(Value_list)
+			Done = True
 	Category(Value_list)
 		
 def Capacity(Value_list):
@@ -428,7 +432,7 @@ def Capacity(Value_list):
 					gUK = cmm*GCK # Barrel UK to Gallon UK
 					bUS = cmm*BCS # Barrel UK to Barrel US
 					print 'cubic millimeters', cmm,'\n','cubic centimeters', ccm,'\n','cubic meters', cm,'\n','liters', lit,'\n','Gallon UK', gUK,'\n','Gallon US', gUS,'\n','Barrel UK', val,'\n','Barrel US', bUS, '\n'
-					os.system('clear')
+					
 				
 				if m == 'US':
 					lit = val*119.2404712 # Barrel US to Liter
@@ -439,13 +443,18 @@ def Capacity(Value_list):
 					gUK = cmm*GCK # Barrel US to Gallon UK
 					bUK = cmm*BCK # Barrel US to Barrel UK
 					print 'cubic millimeters', cmm,'\n','cubic centimeters', ccm,'\n','cubic meters', cm,'\n','liters', lit,'\n','Gallon UK', gUK,'\n','Gallon US', gUS,'\n','Barrel UK', bUK,'\n','Barrel US', val, '\n'
+				
 					
-			newpoint = Checknewpoint(re.compile(r"^[0-9\ ]+$"),'Choose Unit: \n cubic mm - 1 \n cubic cm - 2 \n cubic meter - 3 \n liter - 4 \n gallon - 5 \n barrel - 6 \n Exit -7	')
-			os.system('clear')
+			#newpoint = Checknewpoint(re.compile(r"^[0-9\ ]+$"),'Choose Unit: \n cubic mm - 1 \n cubic cm - 2 \n cubic meter - 3 \n liter - 4 \n gallon - 5 \n barrel - 6 \n Exit -7	')
+			#os.system('clear')
 				
 			if newpoint == '7':
 				Done = True
+				break
 			i = i+1
+			Capacity(Value_list)
+			
+			
 	Category(Value_list)
 		
 def Area(Value_list):
