@@ -13,8 +13,8 @@ import os
 
 def main():
 	Test()
-	Value = Checkvalue(re.compile(r"^[0-9\ ]+$"), " Input Value ")
-	#Value = Checkvalue(re.compile(r"^\d+\.\d+"), " Input Value ")
+	#Value = Checkvalue(re.compile(r"^[0-9\ ]+$"), " Input Value ") Do not forget this function
+	Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]*"), " Input Value ") # La Finale
 	Value_list = Value.split(' ')
 	os.system('clear')
 	Category(Value_list)
