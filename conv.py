@@ -7,12 +7,8 @@ def main():
 	#Value = Checkvalue(re.compile(r"^[0-9\ ]+$"), " Input Value ") #Do not forget this function
 	Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
 	Value_list = Value.split(' ')
-<<<<<<< HEAD
 	os.system('clear')
-	print "Current Value:", Value_list
-=======
-	#os.system('clear')
->>>>>>> fde0b89af76f5341bc4000a235c90ffa41a3443f
+	print " Current Value:", Value_list
 	Category(Value_list)
 
 def Test():
@@ -51,7 +47,7 @@ def Test():
 			Done = True
 	
 def Category(Value_list):
-	point = Checkpoint(re.compile(r"^[0-9\ ]+$"),"  Choose  category: \n Lenght - 0 \n Temperature - 1 \n Time - 2 \n Speed - 3 \n Weight - 4 \n Capacity - 5 \n Area - 6 \n Sound - 7 \n Power - 8 \n Radiation - 9 \n Reset Value - 10 \n Exit - 11	")
+	point = Checkpoint(re.compile(r"^[0-9\ ]+$")," Choose  category: \n Lenght - 0 \n Temperature - 1 \n Time - 2 \n Speed - 3 \n Weight - 4 \n Capacity - 5 \n Area - 6 \n Sound - 7 \n Power - 8 \n Radiation - 9 \n Reset Value - 10 \n Exit - 11	")
 	os.system('clear')
 	
 	if point == '0':
@@ -74,18 +70,11 @@ def Category(Value_list):
 		Power(Value_list)
 	elif point == '9':
 		Radiation(Value_list)
-<<<<<<< HEAD
-	elif point == '10': 
-		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
-		Value_list = Value.split(' ')
-		os.system('clear')
-		print "Current Value:", Value_list
-=======
 	elif point == '10':
 		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
 		Value_list = Value.split(' ')
 		os.system('clear')
->>>>>>> fde0b89af76f5341bc4000a235c90ffa41a3443f
+		print " Current Value:", Value_list
 		Category(Value_list)	
 	elif point == '11':
 		sys.exit()
