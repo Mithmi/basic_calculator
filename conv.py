@@ -4,41 +4,42 @@ import os, sys
 
 def main():
 	Test()
-	#Value = Checkvalue(re.compile(r"^[0-9\ ]+$"), " Input Value ") Do not forget this function
-	Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]*"), " Input Value ") # La Finale
+	#Value = Checkvalue(re.compile(r"^[0-9\ ]+$"), " Input Value ") #Do not forget this function
+	Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
 	Value_list = Value.split(' ')
 	os.system('clear')
+	print "Current Value:", Value_list
 	Category(Value_list)
 
 def Test():
-	print "Hello, you are using a program developed by Three Six Group:\n-Development by Alexandr Aleshkevich\n-Design by Romah Thir\n-Documentation by Egor Ganyshkin \n\nAll right reserved since 01.07.2012 - 31.08.2012\n"
+	print "|=========================================================================| \n| Hello, you are using a program developed by Three Six Group:            |\n|-Development by Alexandr Aleshkevich                                     |\n|-Design by Romah Thir                                                    |\n|-Documentation by Egor Ganyshkin                                         | \n|                                                                         |\n|             All right reserved since 01.07.2012 - 31.08.2012            |\n|=========================================================================| \n"
 	Done = False
 	while not Done:
 		question = raw_input('Enable Test Drive? Yes/No ')
 		if question == "Yes":
 			time.sleep(1)
-			print "Function Lenght - Done"
-			time.sleep(1)
+			print "\nFunction Lenght - Done"
+			time.sleep(0.01)
 			print "Function Weight - Done"
-			time.sleep(1)
+			time.sleep(0.03)
 			print "Function Time - Done"
-			time.sleep(1)
+			time.sleep(0.1)
 			print "Function Temperature - Done"
-			time.sleep(1)
+			time.sleep(0.001)
 			print "Function Speed - Done"
-			time.sleep(1)
+			time.sleep(0.12)
 			print "Function Capacity - Done"
-			time.sleep(1)
+			time.sleep(0.2)
 			print "Function Power - Done"
-			time.sleep(1)
+			time.sleep(0.123)
 			print "Function Area - Done"
-			time.sleep(1)
+			time.sleep(0.333)
 			print "Function Radiation - Done"
-			time.sleep(1)
-			print "Function Sound - Done"
-			time.sleep(1)
-			print " System Prepared... \n"
-			time.sleep(1)
+			time.sleep(0.125)
+			print "Function Sound - Done \n"
+			time.sleep(0.23)
+			print "System Prepared... \n"
+			time.sleep(1.5)
 			print "Prepared Complete \n" 
 			Done = True
 		if question == "No":
@@ -46,7 +47,7 @@ def Test():
 			Done = True
 	
 def Category(Value_list):
-	point = Checkpoint(re.compile(r"^[0-9\ ]+$"),"  Choose  category: \n Lenght - 0 \n Temperature - 1 \n Time - 2 \n Speed - 3 \n Weight - 4 \n Capacity - 5 \n Area - 6 \n Sound - 7 \n Power - 8 \n Radiation - 9 \n Exit - 10	")
+	point = Checkpoint(re.compile(r"^[0-9\ ]+$"),"  Choose  category: \n Lenght - 0 \n Temperature - 1 \n Time - 2 \n Speed - 3 \n Weight - 4 \n Capacity - 5 \n Area - 6 \n Sound - 7 \n Power - 8 \n Radiation - 9 \n Reset Value - 10 \n Exit - 11	")
 	os.system('clear')
 	
 	if point == '0':
@@ -69,9 +70,14 @@ def Category(Value_list):
 		Power(Value_list)
 	elif point == '9':
 		Radiation(Value_list)
-	elif point =='10':
+	elif point == '10': 
+		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
+		Value_list = Value.split(' ')
+		os.system('clear')
+		print "Current Value:", Value_list
+		Category(Value_list)	
+	elif point == '11':
 		sys.exit()
-		
 	
 def Checkvalue(regex, checkvalue_str):
 	FLAG = False
