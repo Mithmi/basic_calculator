@@ -70,7 +70,7 @@ def Category(Value_list):
 	elif point == '9':
 		Radiation(Value_list)
 	elif point == '10':
-		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]*"), " Input Value ") # La Finale
+		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
 		Value_list = Value.split(' ')
 		os.system('clear')
 		Category(Value_list)	
