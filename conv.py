@@ -7,8 +7,12 @@ def main():
 	#Value = Checkvalue(re.compile(r"^[0-9\ ]+$"), " Input Value ") #Do not forget this function
 	Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
 	Value_list = Value.split(' ')
+<<<<<<< HEAD
 	os.system('clear')
 	print "Current Value:", Value_list
+=======
+	#os.system('clear')
+>>>>>>> fde0b89af76f5341bc4000a235c90ffa41a3443f
 	Category(Value_list)
 
 def Test():
@@ -70,11 +74,18 @@ def Category(Value_list):
 		Power(Value_list)
 	elif point == '9':
 		Radiation(Value_list)
+<<<<<<< HEAD
 	elif point == '10': 
 		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
 		Value_list = Value.split(' ')
 		os.system('clear')
 		print "Current Value:", Value_list
+=======
+	elif point == '10':
+		Value = Checkvalue(re.compile(r"^[-+]?[0-9]*\.?[0-9]+$"), " Input Value ") # La Finale
+		Value_list = Value.split(' ')
+		os.system('clear')
+>>>>>>> fde0b89af76f5341bc4000a235c90ffa41a3443f
 		Category(Value_list)	
 	elif point == '11':
 		sys.exit()
@@ -86,6 +97,7 @@ def Checkvalue(regex, checkvalue_str):
 		Value = raw_input(checkvalue_str).strip()
 		if regex.match(Value):
 			FLAG = True
+			print FLAG
 		else:
 			print 'Try to Input Number Value \n For Example : 120 or 11.1 or -1 or 0 or 1e+01'
 	return Value
@@ -756,4 +768,3 @@ def Radiation(Value_list):
 	
 		
 main()
-
